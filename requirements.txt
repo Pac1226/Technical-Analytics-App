@@ -1,0 +1,11 @@
+pandas==1.3.4
+numpy==1.20.3
+financialanalysis==1.2.0
+streamlit==1.8.1
+git+https://github.com/messari/messari-python-api.git
+matplotlib==3.4.3
+hvplot==0.7.3
+holoviews==1.14.8
+plotly==5.6.0
+bokeh==2.4.1
+alpaca-trade-api==1.5.1
