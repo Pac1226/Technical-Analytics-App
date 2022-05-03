@@ -101,8 +101,8 @@ chart.add_trace(go.Scatter(x=linear_regression_df["Date"], y=sma200, name="200-D
 chart.add_trace(go.Scatter(x=linear_regression_df["Date"], y=sma50, name="50-Day SMA", line_color="lightgray"), secondary_y=True,)
 
 chart.update_xaxes(title_text = "Date", showline=False)
-chart.update_yaxes(title_text="Actual Price", range=[0, linear_regression_df["Price"].max() * 1.2], zeroline = True, tickformat = '$', showgrid=True, tick0 = 0, secondary_y=True)
-chart.update_yaxes(showticklabels = False, range=[0, linear_regression_df["Cumulative Returns"].max()* 1.2], tick0 = 0, secondary_y=False)
+chart.update_yaxes(title_text="Actual Price", range=[linear_regression_df["Price"].min() * .6, linear_regression_df["Price"].max() * 1.2], zeroline = True, tickformat = '$', showgrid=True, tick0 = 0, secondary_y=True)
+chart.update_yaxes(showticklabels = False, range=[linear_regression_df["Cumulative Returns"].min() * .6, linear_regression_df["Cumulative Returns"].max()* 1.2], tick0 = 0, secondary_y=False)
 chart.update_layout(template="simple_white")
 chart.update_traces(marker_colorscale="Earth", selector=dict(type='scatter'))
 chart.update_traces(fill="none")
