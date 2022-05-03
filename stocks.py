@@ -25,16 +25,16 @@ st.header('Stock Linear Regressions')
 st.markdown("""
 This app pulls price data for any stock and runs a series of models 
 to assess past performance and predict future price trends!
-* **Python libraries:** pandas, numpy, os, streamlit, messari.messari, financialanalysis, scikit-learn
+* **Python Libraries:** pandas, numpy, streamlit, yfinance, financialanalysis, scikit-learn, plotly
 * **Data Source::** [YFinance](https://finance.yahoo.com/)
 * **Models:** linear regression and risk/return ratios
-* **Charts:** all charts are interactive and can be saved as images
+* **Charts:** all charts are interactive. expandable and downloadable
 """)
 
 
 # Sidebar widgets: cryptocurrency and time period selection
 st.sidebar.header('User Input Features')
-st.sidebar.caption('Input any ticker symbol and select timeframe.')
+st.sidebar.caption('Input any stock and timeframe.')
 
 
 # Widget to select stock ticker
