@@ -41,7 +41,7 @@ st.sidebar.caption('Input any ticker symbol and select timeframe.')
 selected_asset = st.sidebar.text_input('Stock Ticker', value="SPY")
 
 # Widget to select timeperiod
-start_date = st.sidebar.date_input("Start Date", value = dt.date(2022, 1, 31), min_value = dt.date(1950, 1, 31)).strftime('%Y-%m-%d')
+start_date = st.sidebar.date_input("Start Date", value = dt.date(2000, 1, 31), min_value = dt.date(1950, 1, 31)).strftime('%Y-%m-%d')
 end_date = st.sidebar.date_input("End Date").strftime('%Y-%m-%d')
 # Analytics Section 1: Function for Linear Regressions #
 
