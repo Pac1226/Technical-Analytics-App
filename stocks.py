@@ -23,12 +23,12 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 st.header('Stock Linear Regressions')
 
 st.markdown("""
-This app pulls price data for any stock and runs a series of models 
-to assess past performance and predict future price trends!
+This app pulls price data for any stock, builds a linear regression parallell channel, and 
+returns historical price performance statistics!
 * **Python Libraries:** pandas, numpy, streamlit, yfinance, financialanalysis, scikit-learn, plotly
 * **Data Source::** [YFinance](https://finance.yahoo.com/)
 * **Models:** linear regression and risk/return ratios
-* **Charts:** all charts are interactive. expandable and downloadable
+* **Charts:** all charts are interactive, expandable and downloadable
 """)
 
 
@@ -41,11 +41,11 @@ st.sidebar.caption('Input any stock and timeframe.')
 selected_asset = st.sidebar.text_input('Stock Ticker', value="SPY")
 
 # Widget to select timeperiod
-start_date = st.sidebar.date_input("Start Date", value = dt.date(2000, 1, 31), min_value = dt.date(1950, 1, 31)).strftime('%Y-%m-%d')
+start_date = st.sidebar.date_input("Start Date", value = dt.date(1993, 1, 22), min_value = dt.date(1990, 1, 31)).strftime('%Y-%m-%d')
 end_date = st.sidebar.date_input("End Date").strftime('%Y-%m-%d')
 # Analytics Section 1: Function for Linear Regressions #
 
-st.markdown("""**Linear Regression Channel**""")
+st.markdown("""**Linear Regression Parallell Channel**""")
 st.markdown("""Regression line of time and price with standard deviation channels and Simple Moving Averages.""")
 st.caption(f"Ticker: {selected_asset}")
 
@@ -159,5 +159,3 @@ st.markdown("""**Financial Ratios & Statistics**""")
 st.markdown("""Risk/return metrics and performance ratios over selected time period.""")
 st.caption(f"Ticker: {selected_asset}")
 st.bokeh_chart(hv.render(bar_chart, backend="bokeh"))
-
-
