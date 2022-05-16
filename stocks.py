@@ -159,3 +159,38 @@ st.markdown("""**Financial Ratios & Statistics**""")
 st.markdown("""Risk/return metrics and performance ratios over selected time period.""")
 st.caption(f"Ticker: {selected_asset}")
 st.bokeh_chart(hv.render(bar_chart, backend="bokeh"))
+
+
+# YFinance API Pull and DataFrame cleaning
+pull = yf.Ticker(f"{selected_asset}")
+stock_data = pull.history(start = pd.to_datetime("today") - pd.DateOffset(months=12), end = pd.to_datetime("today"))
+stock_data = pd.DataFrame(stock_data["Close"])       
+stock_data = stock_data.rename(columns={"Close": "Price"})
+stock_data["Daily Returns"] = stock_data["Price"].pct_change().dropna()
+stock_data["Cumulative Returns"] = (1 + stock_data["Daily Returns"]).cumprod()
+stock_data = stock_data.dropna()
+stock_data = stock_data.round(2)
+
+
+pull = yf.Ticker("SPY")
+spy_data = pull.history(start = pd.to_datetime("today") - pd.DateOffset(months=12), end = pd.to_datetime("today"))
+spy_data = pd.DataFrame(spy_data["Close"])       
+spy_data = spy_data.rename(columns={"Close": "Price"})
+spy_data["Daily Returns"] = spy_data["Price"].pct_change().dropna()
+spy_data["Cumulative Returns"] = (1 + spy_data["Daily Returns"]).cumprod()
+spy_data = spy_data.dropna()
+spy_data = spy_data.round(2)
+
+beta_90d = (stock_data["Daily Returns"].tail(90).cov(spy_data["Daily Returns"].tail(90))) / spy_data["Daily Returns"].tail(90).var()
+beta_180d = (stock_data["Daily Returns"].tail(180).cov(spy_data["Daily Returns"].tail(180))) / spy_data["Daily Returns"].tail(180).var()
+beta_1year = (stock_data["Daily Returns"].tail(360).cov(spy_data["Daily Returns"].tail(360))) / spy_data["Daily Returns"].tail(360).var()
+
+beta_90d = beta_90d.round(2)
+beta_180d = beta_180d.round(2)
+beta_1year = beta_1year.round(2)
+
+st.sidebar.header('Asset Beta')
+st.sidebar.caption(f"Real-time beta for {selected_asset} relative to the S&P 500.")
+st.sidebar.metric("90-Day Beta", beta_90d, delta_color="off")
+st.sidebar.metric("180-Day Beta", beta_180d, delta_color="off")
+st.sidebar.metric("360-Day Beta", beta_1year, delta_color="off")
