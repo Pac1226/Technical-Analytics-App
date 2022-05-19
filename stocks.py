@@ -20,7 +20,7 @@ hv.extension('bokeh')
 # Application Page Configuration: Headers & Sidebar #
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
-st.header('Stock Linear Regressions')
+st.header('Stock Analytics')
 
 st.markdown("""
 This app pulls price data for any stock, builds a linear regression parallell channel, and 
