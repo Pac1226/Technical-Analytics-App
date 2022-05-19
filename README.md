@@ -1,8 +1,8 @@
-# Stock Linear Regression Application
+# Stock Analytics App
 
-This is an interactive web application hosted on Streamlit that performs statistical analysis on historical stock data. The user inputs any ticker symbol and timeframe. The app performs a linear regression and calculates financial performance metrics, such as the Sharpe Ratio.
+This is an interactive web application hosted on Streamlit that performs statistical analysis on historical stock data. The user inputs any ticker symbol and timeframe. The app builds a linear regression parallel channel and calculates key metrics to evaluate investment performance.
 
-[Real-Time Stock App](https://alpaca.markets/datb)
+[Live Application]([https://alpaca.markets/datb](https://share.streamlit.io/pac1226/stock-analytics-app/main/stocks-ml.py))
 
 
 ## Technologies
