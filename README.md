@@ -1,6 +1,6 @@
 # Stock Analytics App
 
-This is an interactive web application hosted on Streamlit that performs statistical analysis on historical stock data. The user inputs any ticker symbol and timeframe. The app builds a linear regression parallel channel and calculates key metrics to evaluate investment performance.
+This is an interactive web application hosted on Streamlit that performs statistical analysis on public equities. The user inputs any ticker symbol and timeframe. The app builds a linear regression parallel channel and calculates key metrics to evaluate investment performance.
 
 [Live Application](https://share.streamlit.io/pac1226/stock-analytics-app/main/stocks-ml.py)
 
