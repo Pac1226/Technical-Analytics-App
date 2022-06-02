@@ -18,7 +18,7 @@ The program uses Pandas, NumPy, FinancialAnalysis, Scikit-learn, hvPlot, Matplot
 
 ## Installation Guide
 
-FinancialAnalysis is required to run the Jupyter Notebook locally on your computer.
+FinancialAnalysis is required to run the Jupyter Notebook locally on your computer. The live web application requires no programming.
 
 ---
 
