@@ -14,7 +14,7 @@ The program uses Pandas, NumPy, FinancialAnalysis, Scikit-learn, hvPlot, Matplot
 
 ## Installation Guide
 
-FinancialAnalysis is required to run the Jupyter Notebook locally on your computer. An API Key from Alpaca is also required.
+FinancialAnalysis is required to run the Jupyter Notebook locally on your computer.
 
 [Alpaca API](https://alpaca.markets/datb)
 
