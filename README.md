@@ -1,4 +1,4 @@
-# Stock Analytics App
+# Technical Analytics App
 
 This is an interactive web application hosted on Streamlit that performs statistical analysis on public equities. The user inputs any ticker symbol and timeframe. The app builds a linear regression parallel channel and calculates key metrics to evaluate investment performance.
 
