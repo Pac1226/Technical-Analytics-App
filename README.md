@@ -22,7 +22,7 @@ FinancialAnalysis is required to run the Jupyter Notebook locally on your comput
 
 ## Stock Assets
 
-The application aggregates, cleans, and runs models on timeseries price data collected on any ticker symbol that Alpaca reports on.
+The application aggregates, cleans, and runs models on timeseries price data collected on any ticker symbol.
 
 ---
 
