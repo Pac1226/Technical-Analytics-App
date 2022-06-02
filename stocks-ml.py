@@ -23,7 +23,7 @@ hv.extension('bokeh')
 
 # Application Page Configuration: Headers & Sidebar
 st.set_option('deprecation.showPyplotGlobalUse', False)
-st.header('Stock Analytics')
+st.title('Technical Analytics App')
 
 # Description of App in header
 st.markdown("""
